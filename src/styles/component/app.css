@@ -1,0 +1,8 @@
+.app {
+  min-height: calc(100vh - var(--header-desktop-h) - var(--footer-desktop-h));
+}
+
+:root {
+  --header-desktop-h: 58px;
+  --footer-desktop-h: 248px;
+}
