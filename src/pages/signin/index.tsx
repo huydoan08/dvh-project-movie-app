@@ -11,7 +11,7 @@ const uiConfig = {
   },
 };
 
-export function Signin() {
+export default function Signin() {
   return (
     <div>
       <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />

@@ -3,6 +3,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
+import { Button } from "@material-ui/core";
+
+interface Props {
+  children: React.ReactNode;
+}
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -18,17 +23,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ContentModal({ children }: any) {
+export default function ContentModal({ children }: Props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
-  const handleOpen = () => {
+  function handleOpen() {
     setOpen(true);
-  };
+  }
 
-  const handleClose = () => {
+  function handleClose() {
     setOpen(false);
-  };
+  }
 
   return (
     <div>
@@ -51,6 +56,8 @@ export default function ContentModal({ children }: any) {
           <div className={classes.paper}>
             <h2 id="transition-modal-title">Transition modal</h2>
             <p id="transition-modal-description">react-transition-group animates me.</p>
+            <img src="https://lh3.googleusercontent.com/proxy/AHNoMpjo5xjfeX7gHEByUj2o1QqAFx4FIgkGduUi1ytk4V1r-EF_ax7yjOhCVQuXWK5RyqZwCa2o-jlOpVr89q5nBHWJ93fG-63mg-EQmP4uujHDdir_tezP" />
+            <Button variant="contained" color="secondary" target="__blank" href="https://www.youtube.com/watch?v=ZnZqB5Z75zI">Watch the Trailer</Button>
           </div>
         </Fade>
       </Modal>

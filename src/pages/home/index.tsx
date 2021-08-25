@@ -1,6 +1,6 @@
 import axios from "axios";
 import { SingleMovie } from "src/modules/components";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 interface Movie {
   adult: string;
@@ -20,12 +20,16 @@ interface Movie {
   media_type: string;
 }
 
-export const Home = () => {
+export default function Home() {
   const [content, setContent] = useState<Movie[]>([]);
 
-  const [searchText, setSearchText] = useState("panda");
+  const [searchText, setSearchText] = useState("avenger");
 
-  const fetchHome = async () => {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setSearchText(e.target.value);
+  }
+
+  async function fetchHome() {
     try {
       const { data } = await axios.get(
         `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${searchText}&page=1&include_adult=false`,
@@ -34,11 +38,11 @@ export const Home = () => {
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
   useEffect(() => {
     fetchHome();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>
@@ -47,9 +51,7 @@ export const Home = () => {
           type="search"
           placeholder="What movie are you looking for?"
           className="bg-white w-full py-2 rounded-l-lg pl-4 border border-gray-200"
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
+          onChange={(e) => handleChange(e)}
         />
         <input
           type="submit"
@@ -60,9 +62,9 @@ export const Home = () => {
       </form>
       <div className="flex flex-wrap">
         {content.map((c) => (
-          <SingleMovie poster={c.poster_path} />
+          <SingleMovie poster={c.poster_path} title={c.title} />
         ))}
       </div>
     </div>
   );
-};
+}

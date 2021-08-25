@@ -25,7 +25,7 @@ export function Header() {
       <nav>
         <ul className="flex">
           <li className="ml-12 text-xl font-bold hover:text-white navbar-text-color hover:scale-105">
-            <Link to="/Hotfilm">Hot Film</Link>
+            <Link to="/hotfilm">Hot Film</Link>
           </li>
           <li className="ml-12 text-xl font-bold hover:text-white navbar-text-color hover:scale-105">
             <Link to="/seriesfilm">Series Film</Link>

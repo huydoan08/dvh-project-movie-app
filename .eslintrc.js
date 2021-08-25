@@ -14,9 +14,10 @@ module.exports = {
     jest: true,
   },
   rules: {
-    "@typescript-eslint/interface-name-prefix": "off",
+	"@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": [2, { "ignoreRestArgs": true }],
     "array-bracket-spacing": [2, "never"],
     "arrow-parens": [2, "always"],
     "arrow-spacing": [2],
@@ -31,6 +32,7 @@ module.exports = {
     "eol-last": [2, "always"],
     "eqeqeq": [2, "smart"],
     "func-call-spacing": 2,
+    "func-style": [2, "declaration", { "allowArrowFunctions": false }],
     "indent": [2, 2, { "SwitchCase": 1 }],
     "key-spacing": [2, { "beforeColon": false, "afterColon": true }],
     "keyword-spacing": [2, { "before": true, "after": true }],
@@ -43,6 +45,7 @@ module.exports = {
     }],
     "no-array-constructor": 2,
     "no-cond-assign": 2,
+    "no-console": "off",
     "no-const-assign": 2,
     "no-constant-condition": 2,
     "no-debugger": 2,
@@ -84,6 +87,7 @@ module.exports = {
     "operator-linebreak": [2, "after", { "overrides": { "?": "before", ":": "before" } }],
     "prefer-const": 2,
     "quote-props": [2, "as-needed"],
+    "quotes": [2, "double", { "avoidEscape": true }],
     "rest-spread-spacing": [2, "never"],
     "semi": [2, "always"],
     "semi-spacing": [2, { "before": false, "after": true }],
@@ -100,11 +104,10 @@ module.exports = {
     "wrap-iife": [2, "inside"],
     "yoda": [2, "never", { "exceptRange": true }],
     "jsx-a11y/anchor-is-valid": 0,
+    "react-hooks/exhaustive-deps": 2,
     "react/jsx-uses-react": 0,
     "react/react-in-jsx-scope": 0,
     "react/self-closing-comp": 2,
     "react/prop-types": 0,
-	
-	
   },
 };
