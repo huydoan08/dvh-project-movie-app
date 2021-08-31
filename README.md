@@ -63,7 +63,7 @@ Custom hooks that are generic without business entity concepts.
 
 Generic utility functions.
 
-### `src/modules`
+### `s/modurcles`
 
 A module is a business module. In each module folder we can have the following files:
 

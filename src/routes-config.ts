@@ -1,9 +1,11 @@
 import {
   routeHomeBase,
   routeSigninBase,
-  routeHotFilmBase,
-  routeSeriesFilmBase,
+  routeAdminBase,
+  routeNewFilmBase,
   routeShortFilmBase,
+  routeSeriesFilmBase,
+  routeDetailBase,
 } from "./constants/routes";
 import { lazy } from "react";
 import { loadable } from "src/components/loadable";
@@ -15,14 +17,14 @@ export const routesConfig = [
     component: loadable(lazy(() => import("./pages/home"))),
   },
   {
-    path: routeSigninBase,
+    path: routeNewFilmBase,
     exact: true,
-    component: loadable(lazy(() => import("./pages/signin"))),
+    component: loadable(lazy(() => import("./pages/new-film"))),
   },
   {
-    path: routeHotFilmBase,
+    path: routeShortFilmBase,
     exact: true,
-    component: loadable(lazy(() => import("./pages/hot-film"))),
+    component: loadable(lazy(() => import("./pages/short-film"))),
   },
   {
     path: routeSeriesFilmBase,
@@ -30,8 +32,18 @@ export const routesConfig = [
     component: loadable(lazy(() => import("./pages/series-film"))),
   },
   {
-    path: routeShortFilmBase,
+    path: routeSigninBase,
     exact: true,
-    component: loadable(lazy(() => import("./pages/short-film"))),
+    component: loadable(lazy(() => import("./pages/signin"))),
+  },
+  {
+    path: routeAdminBase,
+    exact: true,
+    component: loadable(lazy(() => import("./pages/admin"))),
+  },
+  {
+    path: routeDetailBase,
+    exact: true,
+    component: loadable(lazy(() => import("./pages/film-detail"))),
   },
 ];

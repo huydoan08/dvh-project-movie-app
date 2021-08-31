@@ -1,3 +1,9 @@
-export default function ShortFilm() {
-  return <div className="text-red-500">Short Film</div>;
+import ShortFilm from "src/modules/list-film/component/short-film";
+
+export default function ShortFilmPage() {
+  return (
+    <div className="h-screen">
+      <ShortFilm />
+    </div>
+  );
 }

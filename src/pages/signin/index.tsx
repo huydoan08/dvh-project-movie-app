@@ -1,20 +1,9 @@
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import firebase from "firebase";
-const uiConfig = {
-  signInFlow: "redirect",
-  signInSuccessUrl: "/",
-  signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-  ],
-  callbacks: {
-    signInSuccessWithAuthResult: () => false,
-  },
-};
+import SigninForm from "src/modules/auth/component/sign-in";
 
-export default function Signin() {
+export default function SigninPage() {
   return (
-    <div>
-      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+    <div className="h-screen">
+      <SigninForm />
     </div>
   );
 }
