@@ -1,11 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Kaisei+HarunoUmi&family=Playfair+Display&family=STIX+Two+Math&display=swap');
 html,
 body {
   font-size: 16px;
-  /* https://bitsofco.de/the-new-system-font-stack/ */
-  font-family:Petrona, Stylish, serif;
+  font-family: 'STIX Two Math', serif, 'Playfair Display', serif;
   ;
 }
-
 h1,
 h2,
 h3,

@@ -1,6 +1,6 @@
-import ListFilm from "src/modules/list-film/component/list-film";
+import ListFilm from "src/modules/list-film/component/home-film";
 import Search from "src/modules/search/component/search";
-import SidebarFilm from "src/modules/sidebar/component/sidebar-film";
+import SidebarFilm from "src/modules/sidebar/component/sidebar";
 import { MainTitle } from "src/components/title/main-title";
 import { SidebarTitle } from "src/components/title/sidebar-title";
 
@@ -17,7 +17,7 @@ export default function Home() {
           <div>
             <SidebarTitle />
           </div>
-          <div className="h-screen sticky top-0 overflow-y-auto">
+          <div className="h-screen sticky top-0">
             <SidebarFilm />
           </div>
         </aside>

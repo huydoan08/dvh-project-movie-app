@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 export function Header() {
   return (
     <div className=" flex justify-between mb-10 py-6 px-10 navbar-color">
@@ -19,7 +18,7 @@ export function Header() {
           />
         </svg>
         <span className="text-white font-bold ml-2 text-2xl">
-          <Link to="/">My Movie</Link>
+          <Link to="/home">My Movie</Link>
         </span>
       </a>
       <nav>
@@ -36,11 +35,8 @@ export function Header() {
         </ul>
       </nav>
       <div>
-        <a className="text-white mr-10 font-medium hover:scale-105">
-          <Link to="/admin">Admin</Link>
-        </a>
         <button className="text-white px-3 py-1 font-medium rounded btn-color hover:scale-105">
-          <Link to="/signin">Sign In</Link>
+          <Link to="/admin">Admin</Link>
         </button>
       </div>
     </div>

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@1&display=swap');
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -9,6 +8,10 @@ input[type="number"] {
 }
 .navbar-color{
 	background-color: #0c2738;
+	background-image: url("https://static.independent.co.uk/2021/08/12/17/GettyImages-1332716814.jpg?width=982&height=726&auto=webp&quality=75");
+}
+.footer-color{
+	background-image: url("https://static.independent.co.uk/2021/08/12/17/GettyImages-1332716814.jpg?width=982&height=726&auto=webp&quality=75");
 }
 .navbar-text-color{
 	color:#899ead;
@@ -17,7 +20,7 @@ input[type="number"] {
 	background-color: #e50914;
 }
 .section-color{
-	background-color: #081b27;
+	background-color: #254050;
 }
 
 #title {
@@ -27,7 +30,6 @@ input[type="number"] {
   
   #movies {
 	text-align: center;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
 	border: 3px solid #ddd;
 	width: 100%;

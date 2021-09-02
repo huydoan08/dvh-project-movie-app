@@ -1,9 +1,9 @@
-import AdminListFilm from "src/modules/admin-list-film/admin-list-film";
+import Admin from "src/modules/admin/component/admin";
 
-export default function Admin() {
+export default function AdminPage() {
   return (
     <div>
-      <AdminListFilm />
+      <Admin/>
     </div>
   );
 }

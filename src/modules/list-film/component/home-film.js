@@ -24,7 +24,7 @@ export default function ListFilm() {
     getMovies();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
   if (loading) {
-    return <h1>Loading... </h1>;
+    return <h1 className="text-white text-xl">Loading... </h1>;
   }
 
   return (
@@ -32,7 +32,7 @@ export default function ListFilm() {
       {movies.map((movie) => (
         <div className="flex justify-evenly m-auto ml-8 mt-12">
           <div>
-            <Link to={`/detail/${movie.id}`}>
+            <Link to={`/detail/${movie.slug}`}>
               <img className="rounded-lg max-w-56 h-52 hover:scale-105 duration-300 ease-linear" src={movie.image} />
               <div className="flex flex-wrap mt-6">
                 <img
