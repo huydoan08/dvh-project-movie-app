@@ -2,9 +2,11 @@ import {
   routeHomeBase,
   routeSigninBase,
   routeAdminBase,
+  routeAdminListBase,
   routeNewFilmBase,
   routeShortFilmBase,
   routeSeriesFilmBase,
+  routeSearchFilmBase,
   routeDetailBase,
   routeDetailNewFilmBase,
   routeDetailShortFilmBase,
@@ -34,6 +36,11 @@ export const routesConfig = [
     component: loadable(lazy(() => import("./pages/series-film"))),
   },
   {
+    path: routeSearchFilmBase,
+    exact: true,
+    component: loadable(lazy(() => import("./pages/search"))),
+  },
+  {
     path: routeSigninBase,
     exact: true,
     component: loadable(lazy(() => import("./pages/sign-in"))),
@@ -42,6 +49,11 @@ export const routesConfig = [
     path: routeAdminBase,
     exact: true,
     component: loadable(lazy(() => import("./pages/admin"))),
+  },
+  {
+    path: routeAdminListBase,
+    exact: true,
+    component: loadable(lazy(() => import("./pages/admin-list"))),
   },
   {
     path: routeDetailBase,

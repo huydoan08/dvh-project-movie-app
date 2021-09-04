@@ -13,6 +13,9 @@ input[type="number"] {
 .footer-color{
 	background-image: url("https://static.independent.co.uk/2021/08/12/17/GettyImages-1332716814.jpg?width=982&height=726&auto=webp&quality=75");
 }
+.section-signin-color{
+	background-image: url("https://static.independent.co.uk/2021/08/12/17/GettyImages-1332716814.jpg?width=982&height=726&auto=webp&quality=75");
+}
 .navbar-text-color{
 	color:#899ead;
 }
