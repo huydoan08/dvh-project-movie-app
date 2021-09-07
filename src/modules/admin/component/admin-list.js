@@ -39,6 +39,14 @@ export default function AdminList() {
   // ADD function
 
   function addMovie(newMovie) {
+    setName("");
+    setdesc("");
+    setNation("");
+    setCategory("");
+    setSlug("");
+    setDirector("");
+    setImage("");
+    setVideo("");
     ref
       .doc(newMovie.id)
       .set(newMovie)
@@ -57,7 +65,6 @@ export default function AdminList() {
         console.error(err);
       });
   }
-
   // Edit funtion
 
   function editMovie(updateMovie) {
@@ -71,7 +78,9 @@ export default function AdminList() {
   return (
     <div className="flex text-white">
       <div className="w-4/12 ml-10 border-r pr-10">
-        <h1 className="flex justify-center mb-7 text-4xl text-indigo-500 font-medium">Add Movie Here</h1>
+        <h1 className="flex justify-center mb-7 text-4xl text-indigo-500 font-medium">
+          Add Movie Here
+        </h1>
         <div className="flex flex-col text-black ">
           <div className="flex">
             <h2 className="text-white w-24">Name: </h2>
@@ -119,7 +128,7 @@ export default function AdminList() {
               className="flex flex-1 mb-6 pl-4 ml-4"
               type="text"
               placeholder="Enter movie nation here..."
-              value={image}
+              value={nation}
               onChange={(e) => setNation(e.target.value)}
             />
           </div>
@@ -129,7 +138,7 @@ export default function AdminList() {
               className="flex flex-1 mb-6 pl-4 ml-4"
               type="text"
               placeholder="Enter movie video ID here..."
-              value={image}
+              value={video}
               onChange={(e) => setVideo(e.target.value)}
             />
           </div>
@@ -139,7 +148,7 @@ export default function AdminList() {
               className="flex flex-1 mb-6 pl-4 ml-4"
               type="text"
               placeholder="Enter movie director here..."
-              value={image}
+              value={director}
               onChange={(e) => setDirector(e.target.value)}
             />
           </div>
@@ -149,7 +158,7 @@ export default function AdminList() {
               className="flex flex-1 mb-6 pl-4 ml-4"
               type="text"
               placeholder="Enter slug here..."
-              value={image}
+              value={slug}
               onChange={(e) => setSlug(e.target.value)}
             />
           </div>
@@ -165,7 +174,9 @@ export default function AdminList() {
       </div>
       <div className="w-8/12">
         {loading ? <h1>Loading...</h1> : null}
-        <h1 className="flex justify-center text-4xl mb-5 text-indigo-500 font-medium">List Movie</h1>
+        <h1 className="flex justify-center text-4xl mb-5 text-indigo-500 font-medium">
+          List Movie
+        </h1>
         <div className="flex justify-between mx-8 capitalize font-medium text-lg mb-2">
           <p className="w-4/12 text-3xl">name movie</p>
           <p className="w-4/12 text-3xl">caterory</p>

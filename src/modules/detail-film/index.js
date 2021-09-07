@@ -1,0 +1,3 @@
+export * from "./component/detail-film-home";
+export * from "./component/detail-film-new";
+export * from "./component/detail-film-short";

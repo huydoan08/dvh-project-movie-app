@@ -9,4 +9,5 @@ export const routeAdminListBase = "/adminlist";
 export const routeDetailBase = "/detail/:slug";
 export const routeDetailNewFilmBase = "/detail/newfilm/:slug";
 export const routeDetailShortFilmBase = "/detail/short-film/:slug";
+export const routeDetailSeriesFilmBase = "/detail/series-film/:slug";
 

@@ -32,7 +32,7 @@ export default function SeriesFilm() {
     <div className="flex flex-wrap">
       {movies.map((movie) => (
         <div className="flex justify-evenly m-auto mt-10 hover:scale-105 duration-300 ease-linear">
-          <Link to={`/detail/newfilm/${movie.slug}`}>
+          <Link to={`/detail/series-film/${movie.slug}`}>
             <img className="rounded-lg max-w-56 h-52" src={movie.image} />
             <div className="flex flex-wrap mt-6">
               <img

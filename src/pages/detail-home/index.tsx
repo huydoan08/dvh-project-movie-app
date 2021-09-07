@@ -1,25 +1,10 @@
+import Comment from "src/components/comment/comment";
 import FilmDetail from "src/modules/detail-film/component/detail-film-home";
 export default function FilmDetailPage() {
   return (
     <div>
       <FilmDetail />
-      <div className="flex flex-col bg-white mx-96 pl-6 mt-10 pt-10 w-auto">
-        <div
-          className="fb-like"
-          data-href="https://developers.facebook.com/docs/plugins/"
-          data-width=""
-          data-layout="standard"
-          data-action="like"
-          data-size="small"
-          data-share="true"
-        ></div>
-        <div
-          className="fb-comments"
-          data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
-          data-width=""
-          data-numposts="5"
-        ></div>
-      </div>
+      <Comment />
     </div>
   );
 }

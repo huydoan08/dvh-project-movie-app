@@ -1,9 +1,11 @@
-import Admin from "src/modules/admin/component/admin";
+import AdminMain from "src/modules/admin/component/admin-main";
+import AdminSideBar from "src/modules/admin/component/admin-side-bar";
 
 export default function AdminPage() {
   return (
-    <div>
-      <Admin/>
+    <div className="flex h-screen -mt-10 -mb-20">
+      <AdminSideBar />
+      <AdminMain />
     </div>
   );
 }

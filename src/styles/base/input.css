@@ -25,34 +25,4 @@ input[type="number"] {
 .section-color{
 	background-color: #254050;
 }
-
-#title {
-	text-align: center;
-	font-family: arial, sans-serif;
-  }
-  
-  #movies {
-	text-align: center;
-	border-collapse: collapse;
-	border: 3px solid #ddd;
-	width: 100%;
-  }
-  
-  #movies td, #movies th {
-	border: 1px solid #ddd;
-	padding: 8px;
-  }
-  
-  #movies tr:nth-child(even){background-color: #f2f2f2;}
-  
-  #movies tr:hover {background-color: #ddd;}
-  
-  #movies th {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-align: center;
-	background-color: #4CAF50;
-	color: white;
-  }
-  
   

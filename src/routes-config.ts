@@ -10,6 +10,7 @@ import {
   routeDetailBase,
   routeDetailNewFilmBase,
   routeDetailShortFilmBase,
+  routeDetailSeriesFilmBase,
 } from "./constants/routes";
 import { lazy } from "react";
 import { loadable } from "src/components/loadable";
@@ -69,5 +70,10 @@ export const routesConfig = [
     path: routeDetailShortFilmBase,
     exact: true,
     component: loadable(lazy(() => import("./pages/detail-short-film"))),
+  },
+  {
+    path: routeDetailSeriesFilmBase,
+    exact: true,
+    component: loadable(lazy(() => import("./pages/detail-series-film"))),
   },
 ];
