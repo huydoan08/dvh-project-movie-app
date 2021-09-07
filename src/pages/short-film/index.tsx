@@ -1,5 +1,5 @@
-import { ShortMovieTitle } from "src/components/title/short-movie-title";
-import ShortFilm from "src/modules/list-film/component/short-film";
+import { ShortMovieTitle } from "src/components/short-movie-title";
+import { ShortFilm } from "src/modules/list-film";
 
 export default function ShortFilmPage() {
   return (

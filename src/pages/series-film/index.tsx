@@ -1,5 +1,5 @@
-import { SeriesMovieTitle } from "src/components/title/series-movie-title";
-import SeriesFilm from "src/modules/list-film/component/series-film";
+import { SeriesMovieTitle } from "src/components/series-movie-title";
+import { SeriesFilm } from "src/modules/list-film";
 
 export default function SeriesFilmPage() {
   return (

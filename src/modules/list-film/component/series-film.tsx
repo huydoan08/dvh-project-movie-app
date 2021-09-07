@@ -1,20 +1,21 @@
 import { useState, useEffect } from "react";
 import firebase from "../../../firebase";
 import { Link } from "react-router-dom";
+import { MovieType } from "src/modules/list-film";
 
-export default function ShortFilm() {
-  const [movies, setMovies] = useState([]);
+export function SeriesFilm() {
+  const [movies, setMovies] = useState<MovieType[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const ref = firebase.firestore().collection("short-film");
+  const ref = firebase.firestore().collection("series-film");
   console.log(ref);
 
   function getMovies() {
     setLoading(true);
     ref.onSnapshot((querySnapshot) => {
-      const items = [];
+      const items: MovieType[] = [];
       querySnapshot.forEach((doc) => {
-        items.push(doc.data());
+        items.push(doc.data() as MovieType);
       });
       setMovies(items);
       setLoading(false);
@@ -32,7 +33,7 @@ export default function ShortFilm() {
     <div className="flex flex-wrap">
       {movies.map((movie) => (
         <div className="flex justify-evenly m-auto mt-10 hover:scale-105 duration-300 ease-linear">
-          <Link to={`/detail/short-film/${movie.slug}`}>
+          <Link to={`/detail/series-film/${movie.slug}`}>
             <img className="rounded-lg max-w-56 h-52" src={movie.image} />
             <div className="flex flex-wrap mt-6">
               <img

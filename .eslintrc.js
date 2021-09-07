@@ -17,7 +17,6 @@ module.exports = {
 	"@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-explicit-any": [2, { "ignoreRestArgs": true }],
     "array-bracket-spacing": [2, "never"],
     "arrow-parens": [2, "always"],
     "arrow-spacing": [2],

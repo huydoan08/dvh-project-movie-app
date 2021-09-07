@@ -1,9 +1,9 @@
 import { useState, useMemo } from "react";
-function StarIcon(props) {
+function StarIcon(props: any) {
   const { fill = "none" } = props;
   return (
     <svg
-      class="w-6 h-6"
+      className="w-6 h-6"
       fill={fill}
       stroke="yellow"
       viewBox="0 0 24 24"
@@ -19,7 +19,7 @@ function StarIcon(props) {
   );
 }
 
-function RatingIcon(props) {
+function RatingIcon(props: any) {
   const { index, rating, hoverRating, onMouseEnter, onMouseLeave, onSaveRating } = props;
   const fill = useMemo(() => {
     if (hoverRating >= index) {
@@ -41,17 +41,17 @@ function RatingIcon(props) {
   );
 }
 
-export default function StarRating() {
-  const data = JSON.parse(localStorage.getItem("rating"));
+export function StarRating() {
+  const data = JSON.parse(localStorage.getItem("rating") as any);
   const [rating, setRating] = useState(data);
   const [hoverRating, setHoverRating] = useState(0);
-  function onMouseEnter(index) {
+  function onMouseEnter(index: number) {
     setHoverRating(index);
   }
   function onMouseLeave() {
     setHoverRating(0);
   }
-  function onSaveRating(index) {
+  function onSaveRating(index: number) {
     setRating(index);
     localStorage.setItem("rating", JSON.stringify(index));
   }

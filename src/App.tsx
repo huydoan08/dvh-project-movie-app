@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./styles/tailwind.css";
-import { Header } from "./components/header/header";
+import { Header } from "./components/header";
 import { routesConfig } from "./routes-config";
-import { Footer } from "./components/footer/footer";
+import { Footer } from "./components/footer";
 import firebase from "./firebase";
 import { useEffect } from "react";
 

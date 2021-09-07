@@ -1,7 +1,6 @@
-import ListFilm from "src/modules/list-film/component/home-film";
+import { ListFilm } from "src/modules/list-film";
 import { SidebarFilm } from "src/modules/sidebar";
-import { MainTitle } from "src/components/title/main-title";
-import { SidebarTitle } from "src/components/title/sidebar-title";
+import { MainTitle, SidebarTitle } from "src/components";
 
 export default function Home() {
   return (
@@ -13,7 +12,7 @@ export default function Home() {
         </main>
         <aside className="w-2/12 xl:block lg:block md:hidden sm:hidden">
           <div>
-            <SidebarTitle />
+            <SidebarTitle/>
           </div>
           <div className="h-screen sticky top-0 overflow-hidden">
             <SidebarFilm />

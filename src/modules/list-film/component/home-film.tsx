@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import firebase from "../../../firebase";
 import { Link } from "react-router-dom";
+import { MovieType } from "src/modules/list-film";
 
-export default function ListFilm() {
-  const [movies, setMovies] = useState([]);
+export function ListFilm() {
+  const [movies, setMovies] = useState<MovieType[]>([]);
   const [loading, setLoading] = useState(false);
 
   const ref = firebase.firestore().collection("movies");
@@ -11,9 +12,9 @@ export default function ListFilm() {
   function getMovies() {
     setLoading(true);
     ref.onSnapshot((querySnapshot) => {
-      const items = [];
+      const items: MovieType[] = [];
       querySnapshot.forEach((doc) => {
-        items.push(doc.data());
+        items.push(doc.data() as MovieType);
       });
       setMovies(items);
       setLoading(false);

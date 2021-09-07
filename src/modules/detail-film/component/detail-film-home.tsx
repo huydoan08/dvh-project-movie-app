@@ -2,22 +2,23 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import firebase from "../../../firebase";
-import StarRating from "src/modules/rating/component/star-rating";
+import { StarRating } from "src/modules/rating";
 import { Share } from "src/modules/share";
+import { MovieType } from "../detail-film.type";
 
-export function FilmDetailNew() {
-  const { slug } = useParams();
-  const [movies, setMovies] = useState([]);
+export function FilmDetail() {
+  const { slug }: any = useParams();
+  const [movies, setMovies] = useState<MovieType[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const ref = firebase.firestore().collection("newfilm");
+  const ref = firebase.firestore().collection("movies");
 
   function getMovies() {
     setLoading(true);
     ref.onSnapshot((querySnapshot) => {
-      const items = [];
+      const items: MovieType[] = [];
       querySnapshot.forEach((doc) => {
-        items.push(doc.data());
+        items.push(doc.data() as MovieType);
       });
       setMovies(items);
       setLoading(false);
@@ -77,7 +78,7 @@ export function FilmDetailNew() {
                 </div>
                 <p className="text-white mt-4">Director: {movie.director}</p>
                 <p className="text-white mt-4">Nation: {movie.nation}</p>
-                <p className="text-white mt-4">Release Year: {movie.year}</p>
+                <p className="text-white mt-4">Release year: {movie.year}</p>
                 <p className="text-white mt-4">Quality: {movie.quality}</p>
               </div>
             </div>

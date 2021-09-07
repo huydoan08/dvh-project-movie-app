@@ -2,12 +2,13 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import firebase from "../../../firebase";
-import StarRating from "src/modules/rating/component/star-rating";
+import { StarRating } from "src/modules/rating";
 import { Share } from "src/modules/share";
+import { MovieType } from "../detail-film.type";
 
 export function FilmDetailShort() {
-  const { slug } = useParams();
-  const [movies, setMovies] = useState([]);
+  const { slug }: any = useParams();
+  const [movies, setMovies] = useState<MovieType[]>([]);
   const [loading, setLoading] = useState(false);
 
   const ref = firebase.firestore().collection("short-film");
@@ -15,9 +16,9 @@ export function FilmDetailShort() {
   function getMovies() {
     setLoading(true);
     ref.onSnapshot((querySnapshot) => {
-      const items = [];
+      const items: MovieType[] = [];
       querySnapshot.forEach((doc) => {
-        items.push(doc.data());
+        items.push(doc.data() as MovieType);
       });
       setMovies(items);
       setLoading(false);

@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import firebase from "../../../firebase";
-import { v4 as uuidv4 } from "uuid";
+import { MovieType } from "src/modules/admin-list-film";
 
 export function AdminList() {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState<MovieType[]>([]);
   const [name, setName] = useState("");
-  const [desc, setdesc] = useState("");
+  const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
   const [nation, setNation] = useState("");
@@ -20,15 +20,14 @@ export function AdminList() {
   function getMovies() {
     setLoading(true);
     ref.onSnapshot((querySnapshot) => {
-      const items = [];
+      const items: MovieType[] = [];
       querySnapshot.forEach((doc) => {
-        items.push(doc.data());
+        items.push(doc.data() as MovieType);
       });
       setMovies(items);
       setLoading(false);
     });
   }
-
   useEffect(() => {
     getMovies();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -38,9 +37,9 @@ export function AdminList() {
 
   // ADD function
 
-  function addMovie(newMovie) {
+  function addMovie(newMovie: MovieType) {
     setName("");
-    setdesc("");
+    setDescription("");
     setNation("");
     setCategory("");
     setSlug("");
@@ -48,7 +47,7 @@ export function AdminList() {
     setImage("");
     setVideo("");
     ref
-      .doc(newMovie.id)
+      .doc(newMovie.id as any)
       .set(newMovie)
       .catch((err) => {
         console.error(err);
@@ -57,9 +56,9 @@ export function AdminList() {
 
   // Delete function
 
-  function deleteMovie(movie) {
+  function deleteMovie(movie: MovieType) {
     ref
-      .doc(movie.id)
+      .doc(movie.id as any)
       .delete()
       .catch((err) => {
         console.error(err);
@@ -67,9 +66,9 @@ export function AdminList() {
   }
   // Edit funtion
 
-  function editMovie(updateMovie) {
+  function editMovie(updateMovie: MovieType) {
     ref
-      .doc(updateMovie.id)
+      .doc(updateMovie.id as any)
       .update(updateMovie)
       .catch((err) => {
         console.error(err);
@@ -108,8 +107,8 @@ export function AdminList() {
               className="flex flex-1 mb-6 pl-4 ml-4"
               type="text"
               placeholder="Enter movie description here..."
-              value={desc}
-              onChange={(e) => setdesc(e.target.value)}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
           </div>
           <div className="flex ">
@@ -165,7 +164,7 @@ export function AdminList() {
           <button
             className="px-4 bg-blue-500 rounded text-white w-20 py-1 ml-48"
             onClick={() =>
-              addMovie({ desc, name, category, image, nation, video, director, slug, id: uuidv4() })
+              addMovie({ description, name, category, image, nation, video, director, slug }as MovieType)
             }
           >
             Submit
@@ -192,7 +191,7 @@ export function AdminList() {
               </button>
               <button
                 className="px-4 bg-blue-500 rounded"
-                onClick={() => editMovie({ desc, name, id: movie.id })}
+                onClick={() => editMovie({ description, name, id: movie.id } as MovieType)}
               >
                 Edit
               </button>

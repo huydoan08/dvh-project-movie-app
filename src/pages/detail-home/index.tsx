@@ -1,10 +1,10 @@
-import Comment from "src/components/comment/comment";
+import { Comment } from "src/components";
 import { FilmDetail } from "src/modules/detail-film";
 export default function FilmDetailPage() {
   return (
     <div>
       <FilmDetail />
-      <Comment />
+      <Comment/>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-export default function Comment() {
+export function Comment() {
   return (
     <div>
       <div className="flex flex-col bg-white mx-96 pl-6 mt-10 pt-10 w-auto">

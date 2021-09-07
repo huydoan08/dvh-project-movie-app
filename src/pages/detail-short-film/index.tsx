@@ -1,4 +1,4 @@
-import Comment from "src/components/comment/comment";
+import { Comment } from "src/components";
 import { FilmDetailShort } from "src/modules/detail-film";
 
 export default function FilmDetailShortFilm() {

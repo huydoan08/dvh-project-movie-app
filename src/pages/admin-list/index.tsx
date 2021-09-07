@@ -1,5 +1,4 @@
-import { AdminList } from "src/modules/admin";
-
+import { AdminList } from "src/modules/admin-list-film";
 
 export default function AdminListPage() {
   return (
