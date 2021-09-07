@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import firebase from "../../../firebase";
 import { v4 as uuidv4 } from "uuid";
 
-export default function AdminList() {
+export function AdminList() {
   const [movies, setMovies] = useState([]);
   const [name, setName] = useState("");
   const [desc, setdesc] = useState("");

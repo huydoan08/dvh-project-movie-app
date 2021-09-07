@@ -1,8 +1,5 @@
-import {
-  FacebookShareButton,
-  FacebookIcon,
-} from "react-share";
-export default function Share({ video }) {
+import { FacebookShareButton, FacebookIcon } from "react-share";
+export function Share({ video }) {
   const shareUrl = `https://www.youtube.com/watch?v=${video}`;
   return (
     <div>

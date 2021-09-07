@@ -1,5 +1,5 @@
 import ListFilm from "src/modules/list-film/component/home-film";
-import SidebarFilm from "src/modules/sidebar/component/sidebar";
+import { SidebarFilm } from "src/modules/sidebar";
 import { MainTitle } from "src/components/title/main-title";
 import { SidebarTitle } from "src/components/title/sidebar-title";
 

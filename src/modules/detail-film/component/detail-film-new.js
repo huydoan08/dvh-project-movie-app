@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import firebase from "../../../firebase";
 import StarRating from "src/modules/rating/component/star-rating";
-import Share from "src/modules/share/component/share";
+import { Share } from "src/modules/share";
 
-export default function FilmDetailNew() {
+export function FilmDetailNew() {
   const { slug } = useParams();
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -75,10 +75,10 @@ export default function FilmDetailNew() {
                     Watch Movie
                   </a>
                 </div>
-                <p className="text-white mt-4">Đạo diễn: {movie.director}</p>
-                <p className="text-white mt-4">Quốc gia: {movie.nation}</p>
-                <p className="text-white mt-4">Phát hành: {movie.year}</p>
-                <p className="text-white mt-4">Chất lượng: {movie.quality}</p>
+                <p className="text-white mt-4">Director: {movie.director}</p>
+                <p className="text-white mt-4">Nation: {movie.nation}</p>
+                <p className="text-white mt-4">Release Year: {movie.year}</p>
+                <p className="text-white mt-4">Quality: {movie.quality}</p>
               </div>
             </div>
             <div className="m-auto w-8/12 mt-20">
@@ -88,7 +88,6 @@ export default function FilmDetailNew() {
             <div id="trailer" className="flex justify-center mt-10">
               <ReactPlayer
                 controls={true}
-                light={false}
                 url={`https://www.youtube.com/watch?v=${movie.trailer}`}
               />
             </div>

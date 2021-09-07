@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-export default function AdminMain() {
+export function AdminMain() {
   return (
     <div className="w-10/12 text-red-300 bg-gray-200">
       <div className="flex justify-between mx-8 mt-6">

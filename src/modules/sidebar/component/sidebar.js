@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import firebase from "../../../firebase";
 import { Link } from "react-router-dom";
 
-export default function SidebarFilm() {
+export function SidebarFilm() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
 

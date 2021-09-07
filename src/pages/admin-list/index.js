@@ -1,9 +1,10 @@
-import AdminList from "src/modules/admin/component/admin-list";
+import { AdminList } from "src/modules/admin";
+
 
 export default function AdminListPage() {
   return (
     <div>
-      <AdminList />
+      <AdminList/>
     </div>
   );
 }

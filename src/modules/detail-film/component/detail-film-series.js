@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import firebase from "../../../firebase";
 import StarRating from "src/modules/rating/component/star-rating";
-import Share from "src/modules/share/component/share";
+import { Share } from "src/modules/share";
 
-export default function FilmDetailSeriesFilm() {
+export function FilmDetailSeriesFilm() {
   const { slug } = useParams();
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -88,7 +88,6 @@ export default function FilmDetailSeriesFilm() {
             <div id="trailer" className="flex justify-center mt-10">
               <ReactPlayer
                 controls={true}
-                light={false}
                 url={`https://www.youtube.com/watch?v=${movie.trailer}`}
               />
             </div>

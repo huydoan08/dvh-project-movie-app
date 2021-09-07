@@ -1,4 +1,4 @@
-export default function AdminSideBar() {
+export function AdminSideBar() {
   return (
     <div className="w-2/12 text-white bg-blue-900 pl-6 pt-6">
       <div className="flex mb-3">

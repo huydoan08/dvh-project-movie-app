@@ -1,5 +1,5 @@
 import Comment from "src/components/comment/comment";
-import FilmDetailSeriesFilm from "src/modules/detail-film/component/detail-film-series";
+import { FilmDetailSeriesFilm } from "src/modules/detail-film";
 
 export default function FilmDetailShortFilmPage() {
   return (

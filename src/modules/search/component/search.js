@@ -1,4 +1,4 @@
-export default function Search() {
+export function Search() {
   return (
     <div>
       <form className="flex mx-auto max-w-4xl mb-20">
